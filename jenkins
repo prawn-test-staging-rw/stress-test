@@ -5,7 +5,7 @@ pipeline {
     stages {
          stage('Deployment') {
             steps {
-                sleep 1
+                sleep 2
                 echo ">> SUCCESS"
             }
         }
