@@ -1,0 +1,17 @@
+name: Pull Request
+on:
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+  push:
+    branches:
+      - trunk-merge/**
+
+jobs:
+  wait:
+    name: Wait 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: wait 
+        run: sleep 1
