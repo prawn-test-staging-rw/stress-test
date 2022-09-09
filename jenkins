@@ -10,7 +10,11 @@ pipeline {
          stage('Deployment') {
             steps {
                 sleep 180
-                if [[ "${env.random_num}" -eq 4 ]]; then currentBuild.result = 'FAILURE'; else currentBuild.result = 'SUCCESS'; fi
+                if (env.random_num -eq 4) {
+                    currentBuild.result = 'FAILURE'
+                } else {
+                    currentBuild.result = 'SUCCESS'
+                }
             }
         }
     }
