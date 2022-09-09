@@ -3,7 +3,7 @@ pipeline {
         label 'jenkins-jenkins-agent'
     }
     environment {
-        max = 4
+        max = 2
         NUM = "${Math.abs(new Random().nextInt(max+1))}"
     }
     stages {
@@ -11,12 +11,12 @@ pipeline {
             steps {
                 sleep 1
                 script {
-                    if (env.NUM == 4) {
+                    if ("${env.NUM}" == "2") {
                         echo "Fail ${env.NUM}"
-                        currentBuild.result = 'FAILURE'
+                        currentBuild.result = "FAILURE"
                     } else {
                         echo "Success ${env.NUM}"
-                        currentBuild.result = 'SUCCESS'
+                        currentBuild.result = "SUCCESS"
                     }
                 }
             }
