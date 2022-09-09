@@ -9,7 +9,7 @@ pipeline {
     stages {
          stage('Deployment') {
             steps {
-                sleep 1
+                sleep 600
                 script {
                     if ("${env.NUM}" == "2") {
                         echo "Fail ${env.NUM}"
