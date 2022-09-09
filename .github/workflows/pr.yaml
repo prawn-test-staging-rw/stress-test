@@ -9,7 +9,7 @@ on:
 
 jobs:
   wait:
-    name: Wait 
+    name: Run Pull Request checks 
     runs-on: ubuntu-latest
 
     steps:
