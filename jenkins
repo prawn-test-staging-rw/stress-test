@@ -2,11 +2,15 @@ pipeline {
     agent {
         label 'jenkins-jenkins-agent'
     }
+    environment {
+        max = 5
+        random_num = "${Math.abs(new Random().nextInt(max+1))}"
+    }
     stages {
          stage('Deployment') {
             steps {
                 sleep 180
-                echo ">> SUCCESS"
+                if [[ "${env.random_num}" -eq 4 ]]; then currentBuild.result = 'FAILURE'; else currentBuild.result = 'SUCCESS'; fi
             }
         }
     }
