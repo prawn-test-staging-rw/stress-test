@@ -4,18 +4,18 @@ pipeline {
     }
     environment {
         max = 5
-        random_num = "${Math.abs(new Random().nextInt(max+1))}"
+        NUM = "${Math.abs(new Random().nextInt(max+1))}"
     }
     stages {
          stage('Deployment') {
             steps {
                 sleep 1
                 script {
-                    if (env.random_num > 4) {
-                        echo "Fail"
+                    if (env.NUM > 4) {
+                        echo "Fail ${env.NUM}"
                         currentBuild.result = 'FAILURE'
                     } else {
-                        echo "Success"
+                        echo "Success ${env.NUM}"
                         currentBuild.result = 'SUCCESS'
                     }
                 }
