@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'jenkins-jenkins-agent'
-    }
+    agent any
     environment {
         max = 2
         NUM = "${Math.abs(new Random().nextInt(max+1))}"
