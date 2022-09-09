@@ -9,7 +9,7 @@ pipeline {
     stages {
          stage('Deployment') {
             steps {
-                sleep 180
+                sleep 1
                 script {
                     if (env.random_num == 4) {
                         currentBuild.result = 'FAILURE'
