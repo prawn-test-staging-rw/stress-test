@@ -11,9 +11,11 @@ pipeline {
             steps {
                 sleep 1
                 script {
-                    if (env.random_num == 4) {
+                    if (env.random_num > 4) {
+                        echo "Fail"
                         currentBuild.result = 'FAILURE'
                     } else {
+                        echo "Success"
                         currentBuild.result = 'SUCCESS'
                     }
                 }
