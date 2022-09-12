@@ -24,10 +24,10 @@ pipeline {
     /* Cleanup workspace */
     post {
        success {
-           githubNotify description: 'This is a short example',  status: 'SUCCESS', credentialsId: 'trunk-staging', account: 'prawn-test-staging-rw', context: 'jenkins ci', repo: 'stress-test', sha: "${GIT_COMMIT}", targetUrl: "http://20.245.236.242:8080/job/${JOB_NAME}/${BUILD_NUMBER}"
+           githubNotify description: 'This is a short example',  status: 'SUCCESS', credentialsId: 'prawn-test-staging-rw', account: 'prawn-test-staging-rw', context: 'jenkins ci', repo: 'stress-test', sha: "${GIT_COMMIT}", targetUrl: "http://20.245.236.242:8080/job/${JOB_NAME}/${BUILD_NUMBER}"
        }
        failure {
-           githubNotify description: 'This is a short example',  status: 'FAILURE', credentialsId: 'trunk-staging', account: 'prawn-test-staging-rw', context: 'jenkins ci', repo: 'stress-test', sha: "${GIT_COMMIT}", targetUrl: "http://20.245.236.242:8080/job/${JOB_NAME}/${BUILD_NUMBER}"
+           githubNotify description: 'This is a short example',  status: 'FAILURE', credentialsId: 'prawn-test-staging-rw', account: 'prawn-test-staging-rw', context: 'jenkins ci', repo: 'stress-test', sha: "${GIT_COMMIT}", targetUrl: "http://20.245.236.242:8080/job/${JOB_NAME}/${BUILD_NUMBER}"
        }
        always {
            deleteDir()
