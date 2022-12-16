@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        max = 10
+        max = 20
         NUM = "${Math.abs(new Random().nextInt(max+1))}"
     }
     stages {
@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sleep 180
                 script {
-                    if ("${env.NUM}" == "2") {
+                    if ("${env.NUM}" == "1") {
                         echo "Fail ${env.NUM}"
                         currentBuild.result = "FAILURE"
                     } else {
