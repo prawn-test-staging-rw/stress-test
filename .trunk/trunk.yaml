@@ -10,6 +10,7 @@ merge:
   required_statuses:
     - jenkins ci
     - Run Pull Request checks
+    - Merge stress test
 lint:
   enabled:
     - git-diff-check@SYSTEM
