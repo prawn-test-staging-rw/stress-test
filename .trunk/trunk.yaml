@@ -9,6 +9,7 @@ plugins:
 merge:
   required_statuses:
     - jenkins ci
+    - Run Pull Request checks
 lint:
   enabled:
     - git-diff-check@SYSTEM
